@@ -26,4 +26,4 @@ jobs:
       - name: Install packages
         run: poetry install
       - name: Check flake8
-        run: poetry run flake8
+        run: make flake8

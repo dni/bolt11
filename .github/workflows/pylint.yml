@@ -26,4 +26,4 @@ jobs:
       - name: Install packages
         run: poetry install
       - name: Check pylint
-        run: poetry run pylint boltz_client
+        run: make pylint

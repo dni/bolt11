@@ -24,8 +24,8 @@ def decode(a: str) -> Bolt11Invoice:
 
     try:
         hrp, decoded_data = bech32_decode(a)
-    except Exception:
-        raise Bolt11BadBech32StringException()
+    except Exception as exc:
+        raise Bolt11BadBech32StringException() from exc
 
     if hrp is None or decoded_data is None:
         raise Bolt11BadBech32StringException()

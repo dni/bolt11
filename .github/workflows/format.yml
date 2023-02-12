@@ -26,6 +26,6 @@ jobs:
       - name: Install packages
         run: poetry install
       - name: Check black
-        run: poetry run black bolt11 --check
+        run: make black
       - name: Check isort
-        run: poetry run isort bolt11 --check
+        run: make isort

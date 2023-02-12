@@ -40,6 +40,12 @@ build-backend = "poetry.core.masonry.api"
 [tool.isort]
 profile = "black"
 
+[tool.pyright]
+reportMissingImports = false
+include = [
+    "bolt11"
+]
+
 [tool.mypy]
 ignore_missing_imports = "True"
 files = "bolt11"
@@ -49,10 +55,19 @@ testpaths = [
   "tests"
 ]
 
-# [tool.pylint.'MESSAGES CONTROL']
-# disable = [
-#   "invalid-name",
-#   "too-many-arguments",
-#   "missing-function-docstring",
-#   "missing-class-docstring"
-# ]
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length=125
+disable = [
+  "import-error", # for pre-commit
+  "fixme",
+  "invalid-name",
+  "unsubscriptable-object",
+  "missing-class-docstring",
+  "missing-function-docstring",
+  "too-many-locals",
+  "too-many-branches",
+  "too-many-arguments",
+  "too-many-statements",
+  "too-many-instance-attributes",
+  "too-few-public-methods",
+]

@@ -1,3 +1,6 @@
+""" Bolt11 exceptions """
+
+
 class Bolt11SignatureRecoveryException(Exception):
     """Signature recovery failed"""
 

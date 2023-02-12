@@ -26,4 +26,4 @@ jobs:
       - name: Install packages
         run: poetry install
       - name: Check mypy
-        run: poetry run mypy bolt11 --check
+        run: make mypy
