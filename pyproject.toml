@@ -40,7 +40,7 @@ build-backend = "poetry.core.masonry.api"
 profile = "black"
 
 [tool.mypy]
-# ignore_missing_imports = "True"
+ignore_missing_imports = "True"
 files = "bolt11"
 
 [tool.pytest.ini_options]
