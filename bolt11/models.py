@@ -1,7 +1,7 @@
-import time
 import json
-
+import time
 from typing import List, NamedTuple, Optional
+
 from secp256k1 import PublicKey
 
 

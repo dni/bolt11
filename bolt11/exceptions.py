@@ -1,14 +1,18 @@
 class Bolt11SignatureRecoveryException(Exception):
-    """ Signature recovery failed """
+    """Signature recovery failed"""
+
 
 class Bolt11BadBech32StringException(Exception):
-    """ Bad Bech32 string Exception """
+    """Bad Bech32 string Exception"""
+
 
 class Bolt11NoSignatureException(Exception):
-    """ Too short to contain signature """
+    """Too short to contain signature"""
+
 
 class Bolt11StartWithLnException(Exception):
-    """ Does not start with ln """
+    """Does not start with ln"""
+
 
 class Bolt11InvalidAmountException(Exception):
-    """ Invalid amount Exception """
+    """Invalid amount Exception"""

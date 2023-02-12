@@ -1,8 +1,7 @@
 import base58
-
 from bech32 import bech32_encode
-from .helpers import bitarray_to_u5
 
+from .helpers import bitarray_to_u5
 
 # Map of classical and witness address prefixes
 base58_prefix_map = {"bc": (0, 5), "tb": (111, 196)}

@@ -1,7 +1,8 @@
 import re
 from typing import List
-from bitstring import pack, BitArray, ConstBitStream
+
 from bech32 import CHARSET
+from bitstring import BitArray, ConstBitStream, pack
 
 from .exceptions import Bolt11InvalidAmountException
 

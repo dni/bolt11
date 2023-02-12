@@ -1,12 +1,11 @@
 import pytest
-from bolt11.decode import decode
 
-from bolt11.exceptions import (
-    # Bolt11NoSignatureException,
+from bolt11.decode import decode
+from bolt11.exceptions import (  # Bolt11NoSignatureException,; Bolt11StartWithLnException,
     Bolt11BadBech32StringException,
     Bolt11InvalidAmountException,
-    # Bolt11StartWithLnException,
 )
+
 
 class TestDecodeFail:
     @pytest.mark.parametrize(

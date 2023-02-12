@@ -1,5 +1,6 @@
 """ lnurl CLI """
 import sys
+
 import click
 
 from .decode import decode as bolt11_decode

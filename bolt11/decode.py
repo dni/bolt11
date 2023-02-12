@@ -1,30 +1,25 @@
 """ Bolt11 Invoice Decoder """
 
 import re
-
 from hashlib import sha256
-from bech32 import bech32_decode, CHARSET
-from bitstring import ConstBitStream, Bits
-from typing import Optional, List
-
-from .fallback import parse_fallback
-
-from .exceptions import (
-    Bolt11NoSignatureException,
-    Bolt11BadBech32StringException,
-    Bolt11StartWithLnException,
-)
-
-from .models import Bolt11Invoice, Route
-from .helpers import unshorten_amount, u5_to_bitarray, trim_to_bytes, readable_scid
-
-
+from typing import List, Optional
+from bech32 import CHARSET, bech32_decode
+from bitstring import Bits, ConstBitStream
 from ecdsa import SECP256k1, VerifyingKey
 from ecdsa.util import sigdecode_string
 
+from .fallback import parse_fallback
+from .helpers import readable_scid, trim_to_bytes, u5_to_bitarray, unshorten_amount
+from .models import Bolt11Invoice, Route
+from .exceptions import (
+    Bolt11BadBech32StringException,
+    Bolt11NoSignatureException,
+    Bolt11StartWithLnException,
+)
+
 
 def decode(a: str) -> Bolt11Invoice:
-    """ Bolt11 decode function """
+    """Bolt11 decode function"""
 
     try:
         hrp, decoded_data = bech32_decode(a)
