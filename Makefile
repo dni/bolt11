@@ -1,4 +1,4 @@
-all: black isort flake8 mypy pyright pylint
+all: black isort mypy flake8 pyright pylint
 
 black:
 	poetry run black .
@@ -6,11 +6,11 @@ black:
 isort:
 	poetry run isort .
 
-flake8:
-	poetry run flake8
-
 mypy:
 	poetry run mypy
+
+flake8:
+	poetry run flake8
 
 pyright:
 	poetry run pyright
