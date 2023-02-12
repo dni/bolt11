@@ -1,4 +1,4 @@
-all: black isort mypy flake8 pyright pylint
+all: black isort mypy flake8 pyright pylint test
 
 black:
 	poetry run black .
@@ -17,3 +17,6 @@ pyright:
 
 pylint:
 	poetry run pylint bolt11/
+
+test:
+	poetry run pytest
