@@ -7,7 +7,3 @@ install pre-commit hook
 ```console
 poetry run pre-commit install
 ```
-run pre-commit
-```console
-poetry run pre-commit run --all-files
-```
