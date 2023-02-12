@@ -21,8 +21,7 @@ poetry run bolt11 encode
 make
 ```
 
-### using pre-commit
-install pre-commit hook
+### using pre-commit as git hook
 ```console
 poetry run pre-commit install
 ```
