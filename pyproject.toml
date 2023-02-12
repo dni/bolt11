@@ -24,13 +24,14 @@ base58 = "^2.1.1"
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
 black = "^23.1.0"
-flake8-mypy = "^17.8.0"
 pytest = "^7.2.1"
 pytest-cov = "^4.0.0"
 twine = "^4.0.2"
 types-requests = "^2.28.11.12"
 isort = "^5.12.0"
 pylint = "^2.16.1"
+pyright = "^1.1.293"
+pre-commit = "^3.0.4"
 
 [build-system]
 requires = ["poetry-core"]
@@ -44,15 +45,14 @@ ignore_missing_imports = "True"
 files = "bolt11"
 
 [tool.pytest.ini_options]
-# log_level = "INFO"
 testpaths = [
   "tests"
 ]
 
-[tool.pylint.'MESSAGES CONTROL']
-disable = [
-  "invalid-name",
-  "too-many-arguments",
-  "missing-function-docstring",
-  "missing-class-docstring"
-]
+# [tool.pylint.'MESSAGES CONTROL']
+# disable = [
+#   "invalid-name",
+#   "too-many-arguments",
+#   "missing-function-docstring",
+#   "missing-class-docstring"
+# ]

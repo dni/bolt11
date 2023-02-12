@@ -1,3 +1,4 @@
+""" Bolt11 models """
 import json
 import time
 from typing import List, NamedTuple, Optional

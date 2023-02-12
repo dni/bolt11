@@ -6,7 +6,7 @@ import click
 from .decode import decode as bolt11_decode
 
 # disable tracebacks on exceptions
-# sys.tracebacklimit = 0
+sys.tracebacklimit = 0
 
 
 @click.group()

@@ -4,18 +4,19 @@ from bolt11.decode import decode
 
 default_expiry = 1000
 
+
 class TestDecode:
     @pytest.mark.parametrize(
         "name, payment_request, amount, currency, date, payment_hash, features, payee, payment_secret, "
         "signature, description, description_hash, expiry",
         [
             (
-                # Please make a donation of any amount using payment_hash 0001020304050607080900010203040506070809000102030405060708090102
-                # to me @03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad
+                # Please make a donation of any amount using payment_hash 00010203040506070809000102030405060708090001020304
+                # 05060708090102 to me @03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad
                 "invoice_1",
-                "lnbc1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rq"
-                "wzqfqypqdpl2pkx2ctnv5sxxmmwwd5kgetjypeh2ursdae8g6twvus8g6rfwvs8qun0dfjkxaq9qrsgq357wnc5r2ueh7ck6q93dj32dlqnls087fx"
-                "dwk8qakdyafkq3yap9us6v52vjjsrvywa6rt52cm9r9zqt8r2t7mlcwspyetp5h2tztugp9lfyql",
+                "lnbc1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqs"
+                "yqcyq5rqwzqfqypqdpl2pkx2ctnv5sxxmmwwd5kgetjypeh2ursdae8g6twvus8g6rfwvs8qun0dfjkxaq9qrsgq357wnc5r2ueh7ck6q9"
+                "3dj32dlqnls087fxdwk8qakdyafkq3yap9us6v52vjjsrvywa6rt52cm9r9zqt8r2t7mlcwspyetp5h2tztugp9lfyql",
                 None,
                 "bc",
                 1496314658,
@@ -23,7 +24,8 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "8d3ce9e28357337f62da0162d9454df827f83cfe499aeb1c1db349d4d81127425e434ca29929406c23bba1ae8ac6ca32880b38d4bf6ff874024cac34ba9625f1",
+                "8d3ce9e28357337f62da0162d9454df827f83cfe499aeb1c1db349d4d81127425e434ca29929406c23bba1ae8ac6ca32880b38d4bf"
+                "6ff874024cac34ba9625f1",
                 "Please consider supporting this project",
                 None,
                 default_expiry,
@@ -41,7 +43,8 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "e59e3ffbd3945e4334879158d31e89b076dff54f3fa7979ae79df2db9dcaf5896cbfe1a478b8d2307e92c88139464cb7e6ef26e414c4abe33337961ddc5e8ab1",
+                "e59e3ffbd3945e4334879158d31e89b076dff54f3fa7979ae79df2db9dcaf5896cbfe1a478b8d2307e92c88139464cb7e6ef26e414"
+                "c4abe33337961ddc5e8ab1",
                 "1 cup coffee",
                 None,
                 60,
@@ -59,7 +62,8 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "bae41ef385e0fc972977c7ea42b12cbd76577d2412919da8a8a22f9577b6507710c0e96dd78c821dea16453037f717f44aa7e3d196ebb18fbb97307dcb7336c3",
+                "bae41ef385e0fc972977c7ea42b12cbd76577d2412919da8a8a22f9577b6507710c0e96dd78c821dea16453037f717f44aa7e3d196"
+                "ebb18fbb97307dcb7336c3",
                 "ナンセンス 1杯",
                 None,
                 60,
@@ -77,7 +81,8 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "f67a5f696648fa4fb102e1a07b230e54722f8e024cee71e80b4847ac191da3fb2d2cdb28cc32344d7e9a9cf5c9b6a0ee0582ae46e9938b9c81e344a4dbb5289d",
+                "f67a5f696648fa4fb102e1a07b230e54722f8e024cee71e80b4847ac191da3fb2d2cdb28cc32344d7e9a9cf5c9b6a0ee0582ae46e9"
+                "938b9c81e344a4dbb5289d",
                 None,
                 "3925b6f67e2c340036ed12093dd44e0368df1b6ea26c53dbe4811f58fd5db8c1",
                 default_expiry,
@@ -87,7 +92,8 @@ class TestDecode:
                 "invoice_5",
                 "lntb20m1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygshp58yjmdan79s6qqdhdzgynm4zwqd5d7"
                 "xmw5fk98klysy043l2ahrqspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqfpp3x9et2e20v6pu37c5d9va"
-                "x37wxq72un989qrsgqdj545axuxtnfemtpwkc45hx9d2ft7x04mt8q7y6t0k2dge9e7h8kpy9p34ytyslj3yu569aalz2xdk8xkd7ltxqld94u8h2esmsmacgpghe9k8",
+                "x37wxq72un989qrsgqdj545axuxtnfemtpwkc45hx9d2ft7x04mt8q7y6t0k2dge9e7h8kpy9p34ytyslj3yu569aalz2xdk8xkd7ltxql"
+                "d94u8h2esmsmacgpghe9k8",
                 2_000_000_000,
                 "tb",
                 1496314658,
@@ -95,7 +101,8 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "6ca95a74dc32e69ced6175b15a5cc56a92bf19f5dace0f134b7d94d464b9f5cf6090a18d48b243f289394d17bdf89466d8e6b37df5981f696bc3dd5986e1bee1",
+                "6ca95a74dc32e69ced6175b15a5cc56a92bf19f5dace0f134b7d94d464b9f5cf6090a18d48b243f289394d17bdf89466d8e6b37df5"
+                "981f696bc3dd5986e1bee1",
                 None,
                 "3925b6f67e2c340036ed12093dd44e0368df1b6ea26c53dbe4811f58fd5db8c1",
                 default_expiry,
@@ -105,11 +112,11 @@ class TestDecode:
                 # info to go via nodes 029e03a901b85534ff1e92c43c74431f7ce72046060fcf7a95c37e148f78c77255
                 # then 039e03a901b85534ff1e92c43c74431f7ce72046060fcf7a95c37e148f78c77255
                 "invoice_6",
-                "lnbc20m1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq"
-                "5rqwzqfqypqhp58yjmdan79s6qqdhdzgynm4zwqd5d7xmw5fk98klysy043l2ahrqsfpp3qjmp7lwpagxun9pygexvgpjdc4jdj85fr9yq20q82gph"
-                "p2nflc7jtzrcazrra7wwgzxqc8u7754cdlpfrmccae92qgzqvzq2ps8pqqqqqqpqqqqq9qqqvpeuqafqxu92d8lr6fvg0r5gv0heeeqgcrqlnm6jhp"
-                "hu9y00rrhy4grqszsvpcgpy9qqqqqqgqqqqq7qqzq9qrsgqdfjcdk6w3ak5pca9hwfwfh63zrrz06wwfya0ydlzpgzxkn5xagsqz7x9j4jwe7yj7va"
-                "f2k9lqsdk45kts2fd0fkr28am0u4w95tt2nsq76cqw0",
+                "lnbc20m1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfq"
+                "qqsyqcyq5rqwzqfqypqhp58yjmdan79s6qqdhdzgynm4zwqd5d7xmw5fk98klysy043l2ahrqsfpp3qjmp7lwpagxun9pygexvgpjdc4jd"
+                "j85fr9yq20q82gphp2nflc7jtzrcazrra7wwgzxqc8u7754cdlpfrmccae92qgzqvzq2ps8pqqqqqqpqqqqq9qqqvpeuqafqxu92d8lr6f"
+                "vg0r5gv0heeeqgcrqlnm6jhphu9y00rrhy4grqszsvpcgpy9qqqqqqgqqqqq7qqzq9qrsgqdfjcdk6w3ak5pca9hwfwfh63zrrz06wwfya"
+                "0ydlzpgzxkn5xagsqz7x9j4jwe7yj7vaf2k9lqsdk45kts2fd0fkr28am0u4w95tt2nsq76cqw0",
                 2_000_000_000,
                 "bc",
                 1496314658,
@@ -117,7 +124,8 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "6a6586db4e8f6d40e3a5bb92e4df5110c627e9ce493af237e20a046b4e86ea200178c59564ecf892f33a9558bf041b6ad2cb8292d7a6c351fbb7f2ae2d16b54e",
+                "6a6586db4e8f6d40e3a5bb92e4df5110c627e9ce493af237e20a046b4e86ea200178c59564ecf892f33a9558bf041b6ad2cb8292d7"
+                "a6c351fbb7f2ae2d16b54e",
                 None,
                 "3925b6f67e2c340036ed12093dd44e0368df1b6ea26c53dbe4811f58fd5db8c1",
                 default_expiry,
@@ -125,9 +133,10 @@ class TestDecode:
             (
                 # On mainnet, with fallback (P2SH) address 3EktnHQD7RiAE6uzMj2ZifT9YgRrkSgzQX
                 "invoice_7",
-                "lnbc20m1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygshp58yjmdan79s6qqdhdzgynm4zwqd5d7xmw5fk98klysy04"
-                "3l2ahrqspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqfppj3a24vwu6r8ejrss3axul8rxldph2q7z99qrsgqz6qsgww34xla"
-                "tfj6e3sngrwfy3ytkt29d2qttr8qz2mnedfqysuqypgqex4haa2h8fx3wnypranf3pdwyluftwe680jjcfp438u82xqphf75ym",
+                "lnbc20m1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygshp58yjmdan79s6qqdhdzgynm4zwqd5d7xmw5"
+                "fk98klysy043l2ahrqspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqfppj3a24vwu6r8ejrss3axul8rxldph2"
+                "q7z99qrsgqz6qsgww34xlatfj6e3sngrwfy3ytkt29d2qttr8qz2mnedfqysuqypgqex4haa2h8fx3wnypranf3pdwyluftwe680jjcfp4"
+                "38u82xqphf75ym",
                 2_000_000_000,
                 "bc",
                 1496314658,
@@ -135,7 +144,8 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "16810439d1a9bfd5a65acc61340dc92448bb2d456a80b58ce012b73cb5202438020500c9ab7ef5573a4d174c811f669885ae27f895bb3a3be52c243589f87518",
+                "16810439d1a9bfd5a65acc61340dc92448bb2d456a80b58ce012b73cb5202438020500c9ab7ef5573a4d174c811f669885ae27f895"
+                "bb3a3be52c243589f87518",
                 None,
                 "3925b6f67e2c340036ed12093dd44e0368df1b6ea26c53dbe4811f58fd5db8c1",
                 default_expiry,
@@ -143,9 +153,10 @@ class TestDecode:
             (
                 # On mainnet, with fallback (P2WPKH) address bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4
                 "invoice_8",
-                "lnbc20m1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygshp58yjmdan79s6qqdhdzgynm4zwqd5d7xmw5fk98kl"
-                "ysy043l2ahrqspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqfppqw508d6qejxtdg4y5r3zarvary0c5xw7k9qrsgqt2"
-                "9a0wturnys2hhxpner2e3plp6jyj8qx7548zr2z7ptgjjc7hljm98xhjym0dg52sdrvqamxdezkmqg4gdrvwwnf0kv2jdfnl4xatsqmrnsse",
+                "lnbc20m1pvjluezsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygshp58yjmdan79s6qqdhdzgynm4zwqd5d7xmw5"
+                "fk98klysy043l2ahrqspp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqfppqw508d6qejxtdg4y5r3zarvary0c5"
+                "xw7k9qrsgqt29a0wturnys2hhxpner2e3plp6jyj8qx7548zr2z7ptgjjc7hljm98xhjym0dg52sdrvqamxdezkmqg4gdrvwwnf0kv2jdf"
+                "nl4xatsqmrnsse",
                 2_000_000_000,
                 "bc",
                 1496314658,
@@ -153,7 +164,8 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "5a8bd7b97c1cc9055ee60cf2356621f8752248e037a953886a1782b44a58f5ff2d94e6bc89b7b514541a3603bb33722b6c08aa1a3639d34becc549a99fea6eae",
+                "5a8bd7b97c1cc9055ee60cf2356621f8752248e037a953886a1782b44a58f5ff2d94e6bc89b7b514541a3603bb33722b6c08aa1a36"
+                "39d34becc549a99fea6eae",
                 None,
                 "3925b6f67e2c340036ed12093dd44e0368df1b6ea26c53dbe4811f58fd5db8c1",
                 default_expiry,
@@ -172,7 +184,8 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "2b3ec248f80301a421817369194f012cdd8af8df1c279981420f9e901e20fa3309d791e11355e609b59ce4a220852a0cd55ab862b1785a83b206c90fa74d01c8",
+                "2b3ec248f80301a421817369194f012cdd8af8df1c279981420f9e901e20fa3309d791e11355e609b59ce4a220852a0cd55ab862b1"
+                "785a83b206c90fa74d01c8",
                 None,
                 "3925b6f67e2c340036ed12093dd44e0368df1b6ea26c53dbe4811f58fd5db8c1",
                 default_expiry,
@@ -193,9 +206,10 @@ class TestDecode:
                 "82",
                 "03e7156ae33b0a208d0744199163177e909e80176e55d97a2f221ede0f934dd9ad",
                 "1111111111111111111111111111111111111111111111111111111111111111",
-                "1b1160cf6186b55722c1ac7ea502086baaccaabdc76b326e666b7f309d972b15069bfca11cd365304b36f48230cc12f3f13a017aab65f7c165a169df32282a58",
-                "Blockstream Store: 88.85 USD for Blockstream Ledger Nano S x 1, \"Back In My Day\" "
-                "Sticker x 2, \"I Got Lightning Working\" Sticker x 2 and 1 more items",
+                "1b1160cf6186b55722c1ac7ea502086baaccaabdc76b326e666b7f309d972b15069bfca11cd365304b36f48230cc12f3f13a017aab"
+                "65f7c165a169df32282a58",
+                'Blockstream Store: 88.85 USD for Blockstream Ledger Nano S x 1, "Back In My Day" '
+                'Sticker x 2, "I Got Lightning Working" Sticker x 2 and 1 more items',
                 None,
                 604800,
             ),
@@ -276,7 +290,6 @@ class TestDecode:
         description_hash,
         expiry,
     ):
-
         print(f"decoding invoice: {name}")
         decoded = decode(payment_request)
 

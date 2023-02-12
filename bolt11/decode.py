@@ -3,19 +3,20 @@
 import re
 from hashlib import sha256
 from typing import List, Optional
+
 from bech32 import CHARSET, bech32_decode
 from bitstring import Bits, ConstBitStream
 from ecdsa import SECP256k1, VerifyingKey
 from ecdsa.util import sigdecode_string
 
-from .fallback import parse_fallback
-from .helpers import readable_scid, trim_to_bytes, u5_to_bitarray, unshorten_amount
-from .models import Bolt11Invoice, Route
 from .exceptions import (
     Bolt11BadBech32StringException,
     Bolt11NoSignatureException,
     Bolt11StartWithLnException,
 )
+from .fallback import parse_fallback
+from .helpers import readable_scid, trim_to_bytes, u5_to_bitarray, unshorten_amount
+from .models import Bolt11Invoice, Route
 
 
 def decode(a: str) -> Bolt11Invoice:
@@ -23,7 +24,7 @@ def decode(a: str) -> Bolt11Invoice:
 
     try:
         hrp, decoded_data = bech32_decode(a)
-    except:
+    except Exception:
         raise Bolt11BadBech32StringException()
 
     if hrp is None or decoded_data is None:

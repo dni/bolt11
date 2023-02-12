@@ -1,14 +1,16 @@
 """ Bolt11 Invoice Encoder """
 
-from bitstring import pack, BitArray
 from bech32 import bech32_encode
+from bitstring import BitArray, pack
 from secp256k1 import PrivateKey
 
-from .helpers import shorten_amount, tagged_bytes, tagged, bitarray_to_u5
+from .fallback import encode_fallback
+from .helpers import bitarray_to_u5, shorten_amount, tagged, tagged_bytes
+
 
 # TODO: not done at all :D
 def encode(addr, privkey):
-    """ Bolt11 encode function """
+    """Bolt11 encode function"""
 
     if addr.amount:
         amount = addr.amount

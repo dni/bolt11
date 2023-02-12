@@ -1,3 +1,4 @@
+""" Bolt11 helpers """
 import re
 from typing import List
 
@@ -7,11 +8,7 @@ from bitstring import BitArray, ConstBitStream, pack
 from .exceptions import Bolt11InvalidAmountException
 
 
-# BOLT #11:
-#
-# A writer MUST encode `amount` as a positive decimal integer with no
-# leading zeroes, SHOULD use the shortest representation possible.
-def shorten_amount(amount) -> str:
+def shorten_amount(amount: int) -> str:
     """Given an amount in bitcoin, shorten it"""
     # Convert to pico initially
     amount = int(amount * 10**12)
@@ -27,9 +24,6 @@ def shorten_amount(amount) -> str:
 
 def unshorten_amount(amount: str) -> int:
     """Given a shortened amount, return millisatoshis"""
-    # BOLT #11:
-    # The following `multiplier` letters are defined:
-    #
     # * `m` (milli): multiply by 0.001
     # * `u` (micro): multiply by 0.000001
     # * `n` (nano): multiply by 0.000000001
@@ -37,36 +31,33 @@ def unshorten_amount(amount: str) -> int:
     units = {"p": 10**12, "n": 10**9, "u": 10**6, "m": 10**3}
     unit = str(amount)[-1]
 
-    # BOLT #11:
-    # A reader SHOULD fail if `amount` contains a non-digit, or is followed by
-    # anything except a `multiplier` in the table above.
     if not re.fullmatch(r"\d+[pnum]?", str(amount)):
         raise Bolt11InvalidAmountException(f"Invalid amount '{amount}'")
 
     if unit in units:
         return int(int(amount[:-1]) * 100_000_000_000 / units[unit])
-    else:
-        return int(amount) * 100_000_000_000
+
+    return int(amount) * 100_000_000_000
 
 
 # Tagged field containing BitArray
-def tagged(char, l):
+def tagged(char, data):
     # Tagged fields need to be zero-padded to 5 bits.
-    while l.len % 5 != 0:
-        l.append("0b0")
+    while data.len % 5 != 0:
+        data.append("0b0")
     return (
         pack(
             "uint:5, uint:5, uint:5",
             CHARSET.find(char),
-            (l.len / 5) / 32,
-            (l.len / 5) % 32,
+            (data.len / 5) / 32,
+            (data.len / 5) % 32,
         )
-        + l
+        + data
     )
 
 
-def tagged_bytes(char, l):
-    return tagged(char, BitArray(l))
+def tagged_bytes(char, data):
+    return tagged(char, BitArray(data))
 
 
 def trim_to_bytes(barr):
