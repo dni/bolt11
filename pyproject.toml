@@ -32,6 +32,7 @@ isort = "^5.12.0"
 pylint = "^2.16.1"
 pyright = "^1.1.293"
 pre-commit = "^3.0.4"
+mypy = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]
