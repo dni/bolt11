@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "bolt11"
+version = "0.1.0"
+description = "Bolt11 implementation for Python."
+authors = ["Alan Bits <alan@lnbits.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+  {include = "bolt11"},
+  {include = "bolt11/py.typed"},
+]
+
+[tool.poetry.scripts]
+bolt11 = "bolt11.cli:main"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+bech32 = "^1.2.0"
+ecdsa = "^0.18.0"
+secp256k1 = "^0.14.0"
+setuptools = "^67.2.0"
+bitstring = "^4.0.1"
+base58 = "^2.1.1"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+black = "^23.1.0"
+flake8-mypy = "^17.8.0"
+pytest = "^7.2.1"
+pytest-cov = "^4.0.0"
+twine = "^4.0.2"
+types-requests = "^2.28.11.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = [
+  "tests"
+]
