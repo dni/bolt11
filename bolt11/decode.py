@@ -104,7 +104,7 @@ def decode(a: str) -> Bolt11Invoice:
         else:
             if not invoice.unknown_tags:
                 invoice.unknown_tags = []
-            invoice.unknown_tags.append((tag, tagdata))
+            invoice.unknown_tags.append((tag, trim_to_bytes(tagdata).hex()))
 
     message = bytearray([ord(c) for c in hrp]) + data.tobytes()
 

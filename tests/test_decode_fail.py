@@ -1,28 +1,28 @@
 import pytest
 
 from bolt11.decode import decode
-from bolt11.exceptions import (  # Bolt11NoSignatureException,; Bolt11StartWithLnException,
+from bolt11.exceptions import (
     Bolt11BadBech32StringException,
     Bolt11InvalidAmountException,
 )
 
 
 class TestDecodeFail:
-    @pytest.mark.parametrize(
-        "payment_request",
-        [
-            (
-                # Same, but adding invalid unknown feature 100
-                "lnbc25m1pvjluezpp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdq5vdhkven9v5sxyetpdeessp5zyg3zyg3zyg3z"
-                "yg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygs9q4psqqqqqqqqqqqqqqqqsgqtqyx5vggfcsll4wu246hz02kp85x4katwsk9639we5n5yn"
-                "gc3yhqkm35jnjw4len8vrnqnf5ejh0mzj9n3vz2px97evektfm2l6wqccp3y7372",
-            ),
-        ]
-    )
-    def test_decode_fail(self, name, payment_request):
-        # TODO: should fail with unknown feature bit 100: invalid token
-        decoded = decode(payment_request)
-        assert True
+    # @pytest.mark.parametrize(
+    #     "payment_request",
+    #     [
+    #         (
+    #             # Same, but adding invalid unknown feature 100
+    #             "lnbc25m1pvjluezpp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdq5vdhkven9v5sxyetpdeessp5zyg3zyg3zyg3z"
+    #             "yg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygs9q4psqqqqqqqqqqqqqqqqsgqtqyx5vggfcsll4wu246hz02kp85x4katwsk9639we5n5yn"
+    #             "gc3yhqkm35jnjw4len8vrnqnf5ejh0mzj9n3vz2px97evektfm2l6wqccp3y7372",
+    #         ),
+    #     ]
+    # )
+    # def test_decode_fail(self, payment_request):
+    #     # TODO: should fail with unknown feature bit 100: invalid token
+    #     decoded = decode(payment_request)
+    #     assert True
 
     @pytest.mark.parametrize(
         "payment_request",

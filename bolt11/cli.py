@@ -31,7 +31,7 @@ def decode(bolt11):
     """
     decode a bolt11 invoice
     """
-    click.echo(bolt11_decode(bolt11).json())
+    click.echo(bolt11_decode(bolt11))
 
 
 def main():
