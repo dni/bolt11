@@ -1,3 +1,6 @@
+Bolt11 implementation for Python
+================================
+
 [![github-tests-badge]][github-tests]
 [![github-mypy-badge]][github-mypy]
 [![pypi-badge]][pypi]
