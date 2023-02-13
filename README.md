@@ -1,11 +1,8 @@
 Bolt11 implementation for Python
 ================================
 
-[![github-tests-badge]][github-tests]
-[![github-mypy-badge]][github-mypy]
-[![pypi-badge]][pypi]
-[![pypi-versions-badge]][pypi]
-[![license-badge]](LICENSE)
+[![tests](https://github.com/dni/bolt11/actions/workflows/tests.yml/badge.svg)](https://github.com/dni/bolt11/actions/workflows/tests.yml)
+[![tests](https://github.com/dni/bolt11/actions/workflows/mypy.yml/badge.svg)](https://github.com/dni/bolt11/actions/workflows/mypy.yml)
 
 
 # Bolt11 En- and Decoder
