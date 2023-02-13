@@ -1,3 +1,10 @@
+[![github-tests-badge]][github-tests]
+[![github-mypy-badge]][github-mypy]
+[![pypi-badge]][pypi]
+[![pypi-versions-badge]][pypi]
+[![license-badge]](LICENSE)
+
+
 # Bolt11 En- and Decoder
 inspired by https://github.com/rustyrussell/lightning-payencode
 
