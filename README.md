@@ -1,4 +1,4 @@
-Bolt11 implementation for Python
+:zap: Bolt11 implementation for Python
 ================================
 
 [![tests](https://github.com/dni/bolt11/actions/workflows/tests.yml/badge.svg)](https://github.com/dni/bolt11/actions/workflows/tests.yml)
