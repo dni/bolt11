@@ -5,6 +5,12 @@ Bolt11 implementation for Python
 [![tests](https://github.com/dni/bolt11/actions/workflows/mypy.yml/badge.svg)](https://github.com/dni/bolt11/actions/workflows/mypy.yml)
 
 
+### resources
+* [Bolt11 Spec](https://github.com/lightning/bolts/blob/master/11-payment-encoding.md )
+* [bolt11.org](https://www.bolt11.org/)
+* [lightningdecoder](https://lightningdecoder.com/)
+
+
 # Bolt11 En- and Decoder
 inspired by https://github.com/rustyrussell/lightning-payencode
 
