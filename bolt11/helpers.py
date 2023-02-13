@@ -1,5 +1,6 @@
 """ Bolt11 helpers """
 import re
+from decimal import Decimal
 from typing import List
 
 from bech32 import CHARSET
@@ -8,18 +9,18 @@ from bitstring import BitArray, ConstBitStream, pack
 from .exceptions import Bolt11InvalidAmountException
 
 
-def shorten_amount(amount: int) -> str:
+def shorten_amount(amount: Decimal) -> str:
     """Given an amount in bitcoin, shorten it"""
     # Convert to pico initially
-    amount = int(amount * 10**12)
+    amount_int = int(amount * 10**12)
     units = ["p", "n", "u", "m", ""]
     unit = ""
     for unit in units:
-        if amount % 1000 == 0:
-            amount //= 1000
+        if amount_int % 1000 == 0:
+            amount_int //= 1000
         else:
             break
-    return str(amount) + unit
+    return str(amount_int) + unit
 
 
 def unshorten_amount(amount: str) -> int:
